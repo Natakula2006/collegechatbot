@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
-form sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 st.set_page_config(page_title="Svecw college chatbot",layout="centered")
 if "messages" not in st.session_state:
   st.session_state.messages = []
