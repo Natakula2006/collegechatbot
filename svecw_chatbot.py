@@ -3,7 +3,7 @@ import pandas as pd
 import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-import os
+import os 
 
 # Set page config
 st.set_page_config(page_title="Svecw College Chatbot", layout="centered")
