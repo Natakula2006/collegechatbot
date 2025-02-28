@@ -13,7 +13,7 @@ except Exception as e:
   st.error(f"Failed to load the CSV file. Error: {e}")
   st.stop()
 df = df.fillna("")
-df['Question'] = df['Questio'].str.lower()
+df['Question'] = df['Question'].str.lower()
 df['Answer'] = df['Answer'].str.lower()
 vectorizer = TfidfVectorizer()
 question_vectors = vectorizer.fit_transform(df['Question'])
