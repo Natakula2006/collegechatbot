@@ -3,7 +3,7 @@ import pandas as pd
 import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-import os 
+ 
 
 # Set page config
 st.set_page_config(page_title="Svecw College Chatbot", layout="centered")
@@ -26,14 +26,9 @@ except Exception as e:
 vectorizer = TfidfVectorizer()
 question_vectors = vectorizer.fit_transform(df['Question'])
 
-# Load API key securely
-API_KEY = os.getenv("GOOGLE_API_KEY")
-if not API_KEY:
-    st.error("Google API key is missing. Please set it as an environment variable.")
-    st.stop()
-
+API_KEY ="AIzaSyBzK-krO3a_dbYqnFvod439GQPR_YoL3WM"
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+
 
 def find_closest_question(user_query, vectorizer, question_vectors, df):
     query_vector = vectorizer.transform([user_query.lower()])
